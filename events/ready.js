@@ -7,7 +7,7 @@ module.exports = async (client) => {
 
         let developerUser = null;
         try {
-            developerUser = await client.users.fetch('354455090888835073');
+            developerUser = await client.users.fetch('1043752570243526757');
         } catch (err) {
             developerUser = null;
         }
@@ -22,7 +22,7 @@ module.exports = async (client) => {
             return [
                 {
                     activities: [{
-                        name: client.user.username,
+                        name: "7xLuxor",
                         type: ActivityType.Streaming,
                         url: 'https://twitch.tv/discord'
                     }],
@@ -30,33 +30,25 @@ module.exports = async (client) => {
                 },
                 {
                     activities: [{
-                        name: '&help',
+                        name: 'in your server',
                         type: ActivityType.Playing
                     }],
                     status: 'dnd'
                 },
                 {
                     activities: [{
-                        name: developerName,
+                        name: "to your fav playlist",
                         type: ActivityType.Listening
                     }],
                     status: 'idle'
                 },
                 {
                     activities: [{
-                        name: 'In Silence...',
+                        name: 'your Mom',
                         type: ActivityType.Watching
                     }],
                     status: 'dnd'
                 },
-                {
-                    activities: [{
-                        name: `${totalUsers} Users!!`,
-                        type: ActivityType.Competing
-                    }],
-                    status: 'idle'
-                }
-            ];
         };
 
         const updatePresence = () => {
