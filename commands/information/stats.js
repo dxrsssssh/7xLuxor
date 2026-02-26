@@ -44,30 +44,30 @@ module.exports = {
             const dbStatus = dbPing !== 'N/A' ? `Connected (${dbPing}ms)` : 'Offline';
 
             // Get main developer
-            const mainDev = await client.users.fetch(client.config.developer[0] || '354455090888835073').catch(() => null);
+            const mainDev = await client.users.fetch(client.config.developer[0] || '1043752570243526757').catch(() => null);
             const devName = mainDev?.globalName || mainDev?.username || 'Unknown';
 
             const description =
-                `**General Information**\n` +
+                `<:general:1476428264686747810> **General Information**\n` +
                 `${client.emoji.reply2} **Version:** \`5.0.0\`\n` +
                 `${client.emoji.reply2} **Developer:** \`${devName}\`\n` +
                 `${client.emoji.reply2} **Library:** \`Discord.js v14\`\n` +
                 `${client.emoji.reply2} **Node.js:** \`${process.version}\`\n` +
                 `${client.emoji.reply3} **Platform:** \`${platform}\`\n\n` +
 
-                `**Statistics**\n` +
+                `<:statistics:1476428587673587904> **Statistics**\n` +
                 `${client.emoji.reply2} **Servers:** \`${guilds}\`\n` +
                 `${client.emoji.reply2} **Users:** \`${users}\`\n` +
                 `${client.emoji.reply2} **Channels:** \`${channels}\`\n` +
                 `${client.emoji.reply3} **Commands:** \`${commands}\`\n\n` +
 
-                `**System Information**\n` +
+                `<:System:1476430160910614693> **System Information**\n` +
                 `${client.emoji.reply2} **Memory (Heap):** \`${heapUsed.toFixed(2)}MB / ${heapTotal.toFixed(2)}MB\`\n` +
                 `${client.emoji.reply2} **Memory (RSS):** \`${rssMemory.toFixed(2)}MB\`\n` +
                 `${client.emoji.reply2} **CPU Load:** \`${(os.loadavg()[0]).toFixed(2)}\`\n` +
                 `${client.emoji.reply3} **Database:** \`${dbStatus}\`\n\n` +
 
-                `**Uptime**\n` +
+                `<:Welcomer:1476251628490457312> **Uptime**\n` +
                 `${client.emoji.reply2} \`${days}d ${hours}h ${minutes}m ${seconds}s\`\n` +
                 `${client.emoji.reply3} <t:${Math.floor(Date.now() / 1000)}:F>`;
 
@@ -83,7 +83,7 @@ module.exports = {
         const msg = await message.channel.send({ embeds: [embed], components: [row] });
 
         const collector = msg.createMessageComponentCollector({
-            filter: (i) => i.customId === 'refreshStats' && i.user.id === message.author.id,
+            filter: (i) => i.customId === 'RefreshStats' && i.user.id === message.author.id,
             time: 300000
         });
 
